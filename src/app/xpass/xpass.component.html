@@ -1,0 +1,33 @@
+<h1>Sign Up</h1>
+
+<div class="regMain">
+    <form class="regForm" [formGroup]="setupForm">
+        <table>
+            <tr>
+                <td>
+                    <label id="usernameL">Username</label>
+                </td>
+                <td>
+                    <input #usernameVal id="username" formControlName="username" (keyup)="setUsername(usernameVal.value)">    
+                    <span class="errorMsg" *ngIf="this.setupForm.get('username')?.hasError('required') && this.setupForm.get('username')?.touched">Username is Required*</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label id="passwordL">Password</label>
+                </td>
+                <td>
+                    <input id="password" formControlName="password" type="password" (keyup)="this.passwordNotUsernameValidator()">
+                    <span class="errorMsg" *ngIf="this.setupForm.get('password')?.hasError('required') && this.setupForm.get('password')?.touched">Password is Required*</span>
+                    <span class="errorMsg" *ngIf="this.setupForm.get('password')?.hasError('minlength') && !this.setupForm.get('userPass_error')?.hasError('errorMessage')">Password must be atleast 7 characters long.</span>
+                    <span class="errorMsg" *ngIf="this.setupForm.get('password')?.hasError('minlength')">Password must be atleast 7 characters long.</span>
+                    <span class="errorMsg" *ngIf="this.setupForm.get('password')?.hasError('maxlength')">Password cannot exceed 10 characters.</span>
+                    <span class="errorMsg" *ngIf="this.setupForm.get('password')?.hasError('errorMessage') && !(this.setupForm.get('password')?.hasError('minlength'))">{{this.setupForm.controls['password'].errors?.['errorMessage']}}</span>
+                    <span class="errorMsg" *ngIf="(this.setupForm.get('password')?.hasError('userPass_error') && !(this.setupForm.get('password')?.hasError('minlength')))">Password cannot be the same as the username.</span>                    
+                </td>
+            </tr>
+        </table> 
+
+        <button type="submit" class="signup" (click)="goto()" [disabled]="!setupForm.valid">SignUp</button>
+    </form>
+</div>
