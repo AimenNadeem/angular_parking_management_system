@@ -1,0 +1,48 @@
+<div class="mainCar" *ngIf="this.visibilityStatus==='show'">
+
+    <div  class="carBoxy" *ngFor="let car of this.carsData.data">
+        <table>
+            <tr>
+                <td>Date of Registration</td>
+                <td>{{car.registeredDate}}</td>
+            </tr>
+            <tr>
+                <td>Employee Name</td>
+                <td>{{car.employeeName}}</td>
+            </tr>
+            <tr>
+                <td>Employee ID</td>
+                <td>{{car.employeeId}}</td>
+            </tr>
+            <tr>
+                <td>Parking Name</td>
+                <td>{{car.parkingName}}</td>
+            </tr>
+            <tr>
+                <td>Parking Location</td>
+                <td>{{car.parkingLocation}}</td>
+            </tr>
+            <tr>
+                <td>Transportaion Type</td>
+                <td>{{car.vehicleType}}</td>
+            </tr>
+            <tr>
+                <td>Transportion Model</td>
+                <td>{{car.vehicleIdentity}}</td>
+            </tr>
+            <tr>
+                <td>Parking Space</td>
+                <td>{{car.parkingSpace}}</td>
+            </tr>
+        </table>
+        <button *ngIf="this.adminStatus===true" class="delBtn" (click)="this.removeCarFromParking(car.employeeId)">Delete</button>
+    </div>
+</div>
+
+
+<div class="mainCar" *ngIf="this.visibilityStatus==='hide'">
+    <div class="carDefault">
+        <h2 id="duckHeading">No Data Found...</h2>
+        <img class="duck" [src]="this.imageOfDataNotFound"/>
+    </div>
+</div>
