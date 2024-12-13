@@ -1,0 +1,40 @@
+div.parkBox {
+
+    width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0.1px 0.5px 4px 5px lightgray;
+}
+
+a {
+
+    margin-right: 2rem;
+    text-decoration: none;
+    padding: 1rem;
+}
+
+
+div.tabNav {
+
+    margin: 1rem;
+    width: 60rem;
+}
+
+a:active {
+
+    color: blue;
+}
+
+a.active {
+
+    background-color: rgb(215, 221, 242);
+    border-bottom: 2px solid royalblue;
+    color: royalblue;
+    padding: 1rem;
+    border-radius: 0px;
+    border-top-right-radius: 11px;
+    border-top-left-radius: 11px;
+}
