@@ -1,0 +1,45 @@
+table {
+
+    border: 1px solid rgb(231, 230, 230);
+    border-collapse: collapse;
+}
+
+
+tr, td {
+
+    padding: 1rem;
+    text-align: center;
+}
+
+
+tr:first-child {
+
+    background-color: black;
+    color: white;
+}
+
+tr:nth-child(even){
+
+    background-color: rgb(238, 238, 238);
+}
+
+button.removeParkingBtn {
+
+    /* padding: 1rem; */
+    background-color: rgb(228, 19, 19);
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.removeParkingBtn:hover {
+
+    background-color: rgb(210, 32, 0);
+}
+
+div.tableFit {
+
+    padding: 5rem;
+    padding-top: 3rem;
+}
