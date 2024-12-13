@@ -1,0 +1,22 @@
+<div class="tableFit">
+    <table>
+        <tr>
+            <td>Parking Name</td>
+            <td>Parking Space</td>
+            <td>Parking Location</td>
+            <td>Parkings Occupied</td>
+            <td>Allowed Ranks</td>
+            <td>Actions</td>
+        </tr>
+        <tr *ngFor="let park of this.parkingInfo.data">
+            <td>{{park.parkingName}}</td>
+            <td>{{park.parkingName}}</td>
+            <td>{{park.parkingLocation}}</td>
+            <td>{{park.parkingOccupied}}</td>
+            <td>{{park.rankAllowed}}</td>
+            <td>
+                <button mat-raised-button class="removeParkingBtn" (click)="deleteParking(park.id)">Delete</button>
+            </td>
+        </tr>
+    </table>
+</div>
