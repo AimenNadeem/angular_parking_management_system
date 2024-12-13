@@ -1,0 +1,15 @@
+<div class="parentItems">   
+
+    <div class="itemAdjust" *ngFor="let park of this.parkingInfo.data">
+        <a class="parkingItemLink"  [routerLink]="['/park/', park.parkingName]" routerLinkActive="true" aria-current="page">            
+            <div class="itemCont">
+                <span class="badge"><p>Rank &#9734; {{park.rankAllowed}}</p></span>
+                <p>Parking Name: {{park.parkingName}}</p>                    
+                <p>Parking Space: {{park.parkingSpace}}</p>                    
+                <p>Parking Location: {{park.parkingLocation}}</p>
+                <p>Parking Occupied: {{park.parkingOccupied}}</p>
+            </div>
+        </a>
+    </div>
+
+</div>
