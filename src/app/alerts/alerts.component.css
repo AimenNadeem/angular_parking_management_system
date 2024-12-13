@@ -1,0 +1,49 @@
+div.alertMain {
+
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    margin-top: 15rem;
+}
+
+
+div.alertContainer1 {
+
+    border-radius: 15px;
+    background-color: lightseagreen;
+    color: white;
+    padding: 2rem;
+    width: 20%;
+    margin: auto;
+    text-align: center;
+}
+
+#alertBtn {
+
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color: rgb(231, 229, 229);
+}
+
+#alertBtn:hover {
+
+    background-color: white;
+}
+
+
+div.alertContainer2 {
+
+    border-radius: 15px;
+    background-color: tomato;
+    color: white;
+    padding: 2rem;
+    width: 20%;
+    margin: auto;
+    text-align: center;
+}
