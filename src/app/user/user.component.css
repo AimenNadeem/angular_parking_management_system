@@ -1,0 +1,25 @@
+div.userContainer {
+
+    display: flex;
+    margin-top: 3rem;
+    margin-left: 1rem;
+
+}
+
+div.side {
+
+    height: 20rem;
+    width: 20rem;
+    border: 2px solid transparent;
+    border-radius: 25px 0px 25px 0px;
+    text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+    background: 
+        linear-gradient(white, white) padding-box,
+        linear-gradient(165deg, rgba(121,9,9,1) 0%, rgba(255,120,120,1) 100%) border-box;
+    box-shadow: 1px 0px 8px 2px lightgray;
+    margin-right: 5rem;
+}
