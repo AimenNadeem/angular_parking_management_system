@@ -1,0 +1,114 @@
+div.reportMain {
+
+    margin: auto;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    width: 60rem;
+}
+
+div.reportHead {
+
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+div.reportContents {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    margin-bottom: 3rem;
+}
+
+table {
+
+    border: 1px solid transparent;
+    border-collapse: collapse;
+    margin-bottom: 5rem;
+}
+
+table:not(:last-child){
+
+    border-bottom: 2px solid black;
+}
+
+tr, td {
+
+    border: 1px solid transparent;
+}
+
+tr:nth-child(odd){
+
+    background-color: lightgray;
+}
+
+td {
+
+    padding-left: 5rem;
+}
+
+tr:last-child > td {
+    
+    padding-bottom: 2rem;
+}
+
+h1 {
+
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h2 {
+
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: underline;
+    margin-bottom: 2rem;
+}
+
+div.goBackMain {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button.goBackBtn {
+
+    margin-top: 4rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: white;
+    border: 1px solid transparent;
+    color: rgb(61, 127, 255);
+    cursor: pointer;
+}
+
+button.goBackBtn:hover, button.goBackBtn:active, button.goBackBtn:focus {
+
+    color: rgb(21, 95, 238);
+}
+
+button.toPDF {
+
+    color: aliceblue;
+    background-color: cornflowerblue;
+    margin-top: 4rem;
+}
+
+button.toPDF:hover, button.toPDF:active, button.toPDF:focus {
+
+    background-color: rgb(46, 103, 208);
+}
+
+div.invisibleContainer {
+
+    display: none;
+}
