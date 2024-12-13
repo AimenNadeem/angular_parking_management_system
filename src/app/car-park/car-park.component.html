@@ -1,0 +1,41 @@
+<div class="carParent" (click)="close();">
+
+    <form [formGroup]="this.carParkForm">
+
+        <label>Emp ID</label>
+        <input formControlName="employeeId">
+        <span class="errorMsg eA" *ngIf="this.carParkForm.get('employeeId')?.hasError('required') && this.carParkForm.get('employeeId')?.touched">Employee ID is Required</span>
+        <span class="errorMsg eB" *ngIf="this.carParkForm.get('employeeId')?.hasError('pattern')">Employee ID must only contain Digits</span>
+        
+
+        <label>Vehicle Type</label>
+        <input formControlName="vehicleType">
+        <span class="errorMsg eC" *ngIf="this.carParkForm.get('vehicleType')?.hasError('required') && this.carParkForm.get('vehicleType')?.touched">Vechile Type is Required</span>
+        <span class="errorMsg eD" *ngIf="this.carParkForm.get('vehicleType')?.hasError('pattern')">Vechile Type must only contain alphabets without space.</span>
+
+
+        <label>Vehicle License Plate</label>
+        <input formControlName="vehicleIdentity">
+        <span class="errorMsg eF" *ngIf="this.carParkForm.get('vehicleIdentity')?.errors?.['required'] && this.carParkForm.get('vehicleIdentity')?.touched">Vehicle License Plate Number is Required</span>
+        <span class="errorMsg eG" *ngIf="this.carParkForm.get('vehicleIdentity')?.errors?.['pattern']">Vehicle License Plate Number can only have 3 Capital Alpahabets and 3 digits connected by a dash (i.e. ABC-123)</span>
+        <span class="errorMsg eH" *ngIf="this.carParkForm.get('vehicleIdentity')?.errors?.['minlenght']">Vehicle License Plate Number must be 7 characters long</span>
+        <span class="errorMsg eI" *ngIf="this.carParkForm.get('vehicleIdentity')?.errors?.['maxlenght']">Vehicle License Plate Number cannot exceed 7 characters</span>
+
+
+        <button class="carBtn" [disabled]="!this.carParkForm.valid" (click)="sendParkingData();">Submit</button>
+
+    </form>
+    
+    <div class="requestResult" (click)="close();">
+
+        <div class="goodResult" *ngIf="this.carRequestResult==='good'">
+            <p>{{carResponse.message}}</p>
+        </div>
+        
+        <div class="badResult" *ngIf="this.carRequestResult==='bad'">
+            <p>{{errorResponse.error.message}}</p>
+        </div>
+
+    </div>
+
+</div>
