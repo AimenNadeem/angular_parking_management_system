@@ -1,0 +1,36 @@
+div.navi {
+
+    text-align: right;
+    position: sticky;
+    background-color: white;
+    padding: 1rem;
+    margin: 0;
+}
+
+
+a:not(:last-child) {
+
+    text-decoration: none;
+    margin-right: 25px;
+    color: rgba(121,9,9,1);
+}
+
+
+a:last-child {
+
+    text-decoration: none;
+    margin-right: 25px;
+    color: rgba(121,9,9,1);
+}
+
+
+#fma {
+
+    margin-right: 80%;
+}
+
+
+#signX {
+
+    text-align: right;
+}
