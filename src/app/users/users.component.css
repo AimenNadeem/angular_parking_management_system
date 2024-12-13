@@ -1,0 +1,115 @@
+table {
+
+    border: 1px solid rgb(231, 230, 230);
+    border-collapse: collapse;
+}
+
+
+tr, td {
+
+    padding: 1rem;
+    text-align: center;
+}
+
+
+tr:first-child {
+
+    background-color: black;
+    color: white;
+}
+
+tr:nth-child(even){
+
+    background-color: rgb(238, 238, 238);
+}
+
+
+div.userTableFit {
+
+    padding: 5rem;
+    padding-top: 3rem;
+}
+
+
+button.removeUserBtn {
+
+    /* padding: 1rem; */
+    background-color: rgb(228, 19, 19);
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+button.removeUserBtn:hover {
+
+    background-color: rgb(210, 32, 0);
+}
+
+div.searchFit {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* width: 30rem; */
+    padding: 1rem;
+    /* background-color: rgb(233, 235, 213); */
+}
+
+
+div.row1 {
+
+    flex-direction: row;
+    margin-bottom: 1rem;
+}
+
+div.row2 {
+
+    flex-direction: row;
+    margin-bottom: 1rem;
+}
+
+
+
+label {
+
+    /* margin-top: 3rem; */
+    margin-right: 0.5rem;
+}
+
+input {
+
+    padding: 0.5rem;
+    width: 10rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button.reportBtn {
+
+    width: fit-content;
+    border: 1px solid transparent;
+    background-color: rgb(255, 240, 222);
+    color: black;
+    margin-top: 1rem;
+}
+
+button.reportBtn:hover {
+
+    background-color: bisque;
+}
+
+input.dateFrom, input.rankBox {
+
+    margin-right: 1rem;
+}
+
+form {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+}
