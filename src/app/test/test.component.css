@@ -1,0 +1,32 @@
+#userDataCont {
+
+    width: 20rem;
+    height: fit-content;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    padding: 2rem;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+    margin-top: 5rem;
+    box-sizing: border-box;
+    box-shadow: 0.10px 0.5px 5px 4px lightgray;
+}
+
+#userDataImg {
+
+    width: 15rem;
+    height: 10rem;
+    border: 1px solid lightblue;
+    border-radius: 25px;
+    object-fit: cover;
+    margin: 0%;
+}
+
+#usernameData {
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: bold;
+    font-size: 30px;
+    margin: 0%;
+}
