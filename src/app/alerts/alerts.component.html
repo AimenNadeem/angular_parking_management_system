@@ -1,0 +1,16 @@
+<div class="alertMain" *ngIf="alerttype===good">
+    <div class="alertContainer1">
+        <h1 id="alertHeading">Logining In!</h1>
+        <p id="alertMsg">please wait while we log you in.</p>
+    </div>    
+</div>
+    
+<div class="alertMain" *ngIf="alerttype===bad && isOKed">
+    <div class="alertContainer2">
+        <h1 id="alertHeading">Incorrect Login Details!</h1>
+        <p id="alertMsg">Kindly, type in the correct login details.</p>
+        <button id="alertBtn" (click)="close();">OK</button>
+    </div>    
+</div>
+
+<div *ngIf="alerttype===none"></div>
