@@ -1,0 +1,110 @@
+<div class="goBackMain">
+    <button class="goBackBtn" (click)="gotoUsersTab();">&#8592; Go Back</button>
+    <button class="toPDF" mat-raised-button (click)="createPdf();">Generate PDF</button>
+</div>
+
+<div class="reportMain">
+    <div class="reportHead">
+        <h1>Parking Report</h1>
+        <p>{{this.date | date: "fullDate"}}</p>
+    </div>
+    <div class="reportContents">
+        <h2>Parking Data</h2>
+    <table *ngFor="let r of report.data">
+        <tr>
+            <td>Parking Number</td>
+            <td>{{r.parkingId}}</td>
+        </tr>
+        <tr>
+            <td>Employee Name</td>
+            <td>{{r.employeeName}}</td>
+        </tr>
+        <tr>
+            <td>Parking Name</td>
+            <td>{{r.parkingName}}</td>
+        </tr>
+        <tr>
+            <td>Vehicle Type</td>
+            <td>{{r.vehicleType}}</td>
+        </tr>
+        <tr>
+            <td>Vehicle License Plate</td>
+            <td>{{r.vehicleIdentity}}</td>
+        </tr>
+        <tr>
+            <td>Registration Date</td>
+            <td>{{r.registeredDate}}</td>
+        </tr>
+    </table>
+    </div>
+</div>
+
+
+<div class="invisibleContainer">
+    <div id="reportMainID" 
+style="
+margin: auto;
+margin-top: 5rem;
+margin-bottom: 5rem;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+border: 1px solid black;
+width: 60rem;">
+    <div class="reportHead" 
+    style="
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;">
+        <h1>Parking Report</h1>
+        <p style="margin-bottom: 5rem;">{{this.date | date: "fullDate"}}</p>
+    </div>
+    <div class="reportContents" 
+    style="    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    widths: 80;
+    margin-bottom: 3rem;">
+        <h3 
+        style="
+        text-decoration: underline;
+        margin-bottom: 2rem;">Parking Data</h3>
+    <table *ngFor="let r of report.data" 
+    style="
+    widths: 80rem;
+    alignment: center;    
+    border-collapse: collapse;
+    margin-left: 10rem;
+    margin-bottom: 5rem;
+    border: 2px solid transparent;
+    border-bottom: 2px solid transparent;">
+        <tr style="border: 1px solid transparent;">
+            <td style="border: 1px solid transparent;padding-left: 5rem;">Parking Number</td>
+            <td style="border: 1px solid transparent;padding-left: 5rem;">{{r.parkingId}}</td>
+        </tr>
+        <tr style="border: 1px solid transparent;">
+            <td style="border: 1px solid transparent;padding-left: 5rem;">Employee Name</td>
+            <td style="border: 1px solid transparent;padding-left: 5rem;">{{r.employeeName}}</td>
+        </tr>
+        <tr style="border: 1px solid transparent;">
+            <td style="border: 1px solid transparent;padding-left: 5rem;">Parking Name</td>
+            <td style="border: 1px solid transparent;padding-left: 5rem;">{{r.parkingName}}</td>
+        </tr>
+        <tr style="border: 1px solid transparent;">
+            <td style="border: 1px solid transparent;padding-left: 5rem;">Vehicle Type</td>
+            <td style="border: 1px solid transparent;padding-left: 5rem;">{{r.vehicleType}}</td>
+        </tr>
+        <tr style="border: 1px solid transparent;">
+            <td style="border: 1px solid transparent;padding-left: 5rem;">Vehicle License Plate</td>
+            <td style="border: 1px solid transparent;padding-left: 5rem;">{{r.vehicleIdentity}}</td>
+        </tr>
+        <tr style="border: 1px solid transparent;">
+            <td style="border: 1px solid transparent;padding-left: 5rem;">Registration Date</td>
+            <td style="border: 1px solid transparent;padding-left: 5rem;">{{r.registeredDate}}</td>
+        </tr>
+    </table>
+    </div>
+</div>
+</div>
