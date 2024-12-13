@@ -1,9 +1,5 @@
 # angular_parking_management_system
-A car parking management system created in angular with JWT auth token consumption and secure API communication.
-
-# ManagementApp
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.11.
+A car parking management system created in angular with JWT auth token consumption and secure API communication. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.11.
 
 ## Development server
 
