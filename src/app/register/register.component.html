@@ -1,0 +1,97 @@
+<h1>Sign Up</h1>
+
+<div class="regMain">
+    <form class="regForm" [formGroup]="this.regForm">
+        <table>
+            <tr>
+                <td>
+                    <label id="idL">Employee ID</label>
+                </td>
+                <td>
+                    <input id="id" formControlName="employeeId" (keypress)="onKeyPressID($event);">    
+                    <span class="errorMsg" *ngIf="this.regForm.get('employeeId')?.hasError('required') && this.regForm.get('employeeId')?.touched">Employee ID is Required*</span>
+                    <span class="errorMsg" *ngIf="this.regForm.get('employeeId')?.hasError('pattern')">Incorrect Employee ID</span> 
+                    <span class="errorMsg" *ngIf="this.regForm.get('employeeId')?.hasError('minlength') && !this.regForm.get('employeeId')?.hasError('pattern')">Employee ID must have atleast 3 digits.</span>                                                                               
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label id="nameL">Employee Name</label>
+                </td>
+                <td>
+                    <input id="name" formControlName="employeeName">
+                    <span class="errorMsg" *ngIf="this.regForm.get('employeeName')?.hasError('required') && this.regForm.get('employeeName')?.touched">Employee Name is Required*</span>
+                    <span class="errorMsg" *ngIf="this.regForm.get('employeeName')?.hasError('pattern')">Incorrect Employee Name</span>
+                    <span class="errorMsg" *ngIf="this.regForm.get('employeeName')?.hasError('minlength') && !this.regForm.get('employeeName')?.hasError('pattern')">Employee Name must be atleast 4 characters long.</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label id="usernameL">Username</label>
+                </td>
+                <td>
+                    <input id="username" formControlName="userName" (keypress)="onKeyPressUserName($event);">
+                    <span class="errorMsg" *ngIf="this.regForm.get('userName')?.hasError('required') && this.regForm.get('userName')?.touched">Username is Required*</span>
+                    <span class="errorMsg" *ngIf="this.regForm.get('userName')?.hasError('pattern')">Incorrect Username (only characters and numbers are allowed).</span>
+                    <span class="errorMsg" *ngIf="this.regForm.get('userName')?.hasError('minlength') && !this.regForm.get('userName')?.hasError('pattern')">Employee Name must be atleast 5 characters long.</span>
+                    <span class="errorMsg" *ngIf="this.regForm.get('userName')?.hasError('maxlength') && !this.regForm.get('userName')?.hasError('pattern')">Employee Name cannot exceed 10 characters.</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label id="rankL">Rank</label>
+                </td>
+                <td>
+                    <div class="rankCont" [ngStyle]="this.rankStyle">
+                        <div id="domainBtn" (click)="this.toggleDD();">
+                            <button class="rankDD">{{this.textSelect}}</button>
+                            <span class="arrow">&#11206;</span>                            
+                        </div>
+                        <span class="errorMsg" *ngIf="this.regForm.get('rank')?.hasError('required') && this.regForm.get('rank')?.touched">Rank is Required*</span>
+                        <div class="listRank" [ngStyle]="this.ddState">
+                            <ul>
+                                <li *ngFor="let rd of this.ranksData.data" [class.selected]="this.rd.rank === this.textSelect" (click)="setRank(rd);changeRankStyle2();changeRankStyle2();">{{rd.rank}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label id="mobileL">Mobile No.</label>
+                </td>
+                <td>
+                    <input id="mobile" formControlName="mobileNo" (keypress)="onKeyPressMobi($event);">
+                    <span class="errorMsg" *ngIf="this.regForm.get('mobileNo')?.hasError('required') && this.regForm.get('mobileNo')?.touched" [ngStyle]="this.spanOp">Mobile Number is Required*</span>
+                    <span class="errorMsg" *ngIf="this.regForm.get('mobileNo')?.hasError('pattern')">Incorrect Mobile Number</span>
+                    <span class="errorMsg" *ngIf="this.regForm.get('mobileNo')?.hasError('minlength') && !this.regForm.get('mobileNo')?.hasError('pattern')" [ngStyle]="this.spanOp">Mobile Number must have atleast 10 digits.</span>
+                    <span class="errorMsg" *ngIf="this.regForm.get('mobileNo')?.hasError('maxlength')  && !this.regForm.get('mobileNo')?.hasError('pattern')" [ngStyle]="this.spanOp">Mobile Number cannot exceed 10 digits.</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label id="emailL">Email</label>
+                </td>
+                <td>
+                    <input id="email" formControlName="email">
+                    <span class="errorMsg" *ngIf="this.regForm.get('email')?.hasError('required') && this.regForm.get('email')?.touched" [ngStyle]="this.spanOp">Email is Required*</span>
+                    <span class="errorMsg" *ngIf="this.regForm.get('email')?.hasError('pattern')" [ngStyle]="this.spanOp">Incorrect Email</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label id="accountL">Account No.</label>
+                </td>
+                <td>
+                    <input id="account" formControlName="accountNo" (keypress)="onKeyPressAcc($event);">
+                    <span class="errorMsg" *ngIf="this.regForm.get('accountNo')?.hasError('required') && this.regForm.get('accountNo')?.touched"  [ngStyle]="this.spanOp">Account Number is Required*</span>
+                    <span class="errorMsg" *ngIf="this.regForm.get('accountNo')?.hasError('pattern')"  [ngStyle]="this.spanOp">Incorrect Account Number</span>
+                    <span class="errorMsg" *ngIf="this.regForm.get('accountNo')?.hasError('minlength') && !this.regForm.get('accountNo')?.hasError('pattern')"  [ngStyle]="this.spanOp">Account Number must have atleast 14 digits.</span>
+                    <span class="errorMsg" *ngIf="this.regForm.get('accountNo')?.hasError('maxlength')  && !this.regForm.get('accountNo')?.hasError('pattern')"  [ngStyle]="this.spanOp">Account Number cannot exceed 24 digits.</span>
+                </td>
+            </tr>
+        </table> 
+
+        <button type="submit" class="signup" (click)="submitForm();" [disabled]="!this.regForm.valid">Next</button>
+    </form>
+</div>
