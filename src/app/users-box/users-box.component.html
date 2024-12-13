@@ -1,0 +1,18 @@
+<a class="userLinks" *ngFor="let d of dataX" [routerLink]="['/user/', d.id]" >
+
+<div class="boxy">
+    <div id="userPfp">
+        <img src={{d.pic}} />
+    </div>
+    <div id="userName">
+        <p>{{d.username}}</p>
+    </div>
+    <div id="userMoney">
+        <p>{{d.money}}</p>    
+    </div>
+    <div id="userMoneyCode">
+        <p>{{d.c_code}}</p>
+    </div>
+</div>
+
+</a>
