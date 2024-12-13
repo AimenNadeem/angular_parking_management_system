@@ -1,0 +1,70 @@
+<app-alerts [(alerttype)]="this.alertType"></app-alerts>
+
+<div class="loginMain">
+    <h1>Login</h1>
+
+    <form [formGroup]="formgroupX" (ngSubmit)="submit(formgroupX.value)">
+
+        <div>
+            <table>
+                <tr class="TR1" style="height: fit-content;">
+                    <td>
+                        <i class="user-icon">
+                        <div>
+                            <svg 
+                            [ngStyle]="this.svgStyle1" 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            xmlns:xlink="http://www.w3.org/1999/xlink" 
+                            version="1.1" id="Capa_1" 
+                            x="0px" 
+                            y="0px" 
+                            viewBox="0 0 512 512" 
+                            style="enable-background:new 0 0 512 512;" 
+                            xml:space="preserve" 
+                            width="25" height="25">
+                            <g [ngStyle]="this.svgStyle1">
+                                <circle cx="256" [attr.cy]="cy" r="128" [ngStyle]="this.svgStyle1" />
+                                <path [ngStyle]="this.svgStyle1" d="M256,298.667c-105.99,0.118-191.882,86.01-192,192C64,502.449,73.551,512,85.333,512h341.333   
+                                c11.782,0,21.333-9.551,21.333-21.333C447.882,384.677,361.99,298.784,256,298.667z"/>
+                            </g>
+                        </svg>
+                        </div>
+                        </i>
+                    <td>
+                        <input class="usernameInput"  type="text" placeholder="Username" value="" formControlName="username" (focusout)="changeFillBackUsername();" (focusin)="changeFillUsername();" (keyup)="svgChanger()">
+                        <span class="errorMsg" *ngIf="formgroupX.get('username')?.hasError('required') && formgroupX.get('username')?.touched">Username is required*</span>
+                        <span class="errorMsg" *ngIf="formgroupX.get('username')?.hasError('pattern')">Incorrect Username</span>                                        
+                    </td>
+                </tr>
+                <tr class="TR2">
+                    <td>
+                        <i class="eye-icon" (click)="onClickPassword(this.isClick=!this.isClick);">
+                            <div id="eyeclose" *ngIf="this.isClick==false">
+                                <svg
+                                width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path [ngStyle]="this.svgStyle2" [attr.d]="this.eyedval"/></svg>        
+                            </div>
+                            <div id="eyeOpen" *ngIf="this.isClick==true">
+                                <svg
+                                width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15.0007 12C15.0007 13.6569 13.6576 15 12.0007 15C10.3439 15 9.00073 13.6569 9.00073 12C9.00073 10.3431 10.3439 9 12.0007 9C13.6576 9 15.0007 10.3431 15.0007 12Z" stroke="rgba(121,9,9,1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12.0012 5C7.52354 5 3.73326 7.94288 2.45898 12C3.73324 16.0571 7.52354 19 12.0012 19C16.4788 19 20.2691 16.0571 21.5434 12C20.2691 7.94291 16.4788 5 12.0012 5Z" stroke="rgba(121,9,9,1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </i>
+                    </td>
+                    <td>
+                        <input class="passwordInput" [type]="this.inputPassType" placeholder="Password" value="" formControlName="password" (focusout)="changeFillBackPassword();" (focusin)="changeFillPassword();">
+                        <span class="errorMsg" *ngIf="formgroupX.get('password')?.hasError('required') && formgroupX.get('password')?.touched">Password is required*</span>
+                        <span class="errorMsg" *ngIf="formgroupX.get('password')?.hasError('pattern')">Incorrect Password</span>                                        
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <button id="loginBtn" type="submit" (click)="sendLoginData();sendLoginPostRequest();" [disabled]="!this.formgroupX.valid">Login</button>
+
+        <button id="link" (click)="goToSetUp()">set password?</button>
+    </form>
+
+</div>
