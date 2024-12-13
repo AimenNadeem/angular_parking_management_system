@@ -1,0 +1,54 @@
+div.boxy {
+
+    margin-top: 2rem;
+    display: flex;
+    padding: 1rem;
+    border-radius: 25px;
+    border-style: none;
+    background-color: white;
+    box-shadow: 0.10px 0.5px 5px 1px lightgray;
+    color: black;
+    display: flex;
+}
+
+#userPfp {
+
+    margin-right: 2rem;
+}
+
+#userPfp > img {
+
+    border: 1px solid lightgray;
+    border-radius: 30px;
+    height: 5rem;
+    width: 6rem;
+}
+
+
+p {
+
+    padding-top: 1rem;
+}
+
+#userName {
+
+    margin-right: 2rem;
+}
+
+
+#userMoney{
+
+    margin-right: 1rem;
+    margin-left: 30rem;
+}
+
+
+#userMoneyCode {
+
+    margin-right: 2rem;
+}
+
+a.userLinks {
+
+    text-decoration: none;
+}
