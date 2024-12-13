@@ -1,0 +1,39 @@
+<div class="parkingFormCont" (click)="close();">
+<form class="parkingForm" [formGroup]="this.parkingForm">
+            
+    <label>Parking Name</label>            
+    <input type="text" formControlName="parkingName">
+            
+    <label>Parking Space</label>
+    <input type="text" formControlName="parkingSpace">
+    <label>Parking Location</label>
+            
+    <input type="text" formControlName="parkingLocation">
+    <label>Rank Allowed</label>
+
+            
+    <div class="allRankContents">
+        <div class="rankParentContainer" (click)="toggle();">
+
+            <button id="rankBtn">{{textAllowedRanks}}</button>    
+            <span class="arrow">&#11206;</span>                            
+            
+        </div>                        
+        <div class="allowedRanks" [ngStyle]="ddState">
+            <ul>
+                <li *ngFor="let rank of ranksData.data" (click)="setRankInput(rank)">{{rank.rank}}</li>
+            </ul>
+        </div>
+    </div>
+    <button type="submit" (click)="sendParkingData();" id="parkingSubmit">Add Parking</button>
+    
+</form>
+</div>
+
+<!-- <div class="itemsCont">
+    <app-parkingitems #parkingItems></app-parkingitems>
+</div> -->
+
+<div *ngIf="this.parkingResponse===true" id="parkingAdded" (click)="close();">New Parking Added!</div>
+    
+<div *ngIf="this.parkingResponse===false" id="parkingNotAdded" (click)="close();">Error Invalid Parking Data!</div>
