@@ -1,0 +1,15 @@
+div.wellMain {
+
+    margin: 5rem;
+    margin-top: 0rem; 
+}
+
+div.wellSub {
+
+    width: 100%;
+    display: flex; 
+    flex-wrap: wrap;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+}
