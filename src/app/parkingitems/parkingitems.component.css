@@ -1,0 +1,76 @@
+div.itemCont {
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: white;
+    padding: 1rem;
+    width: 20rem;
+    border-radius: 25px;
+    box-shadow: 0.1px 0.5px 4px 5px lightgray;
+}
+
+
+div.itemAdjust {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: fit-content;
+    margin-bottom: 5rem;
+    margin-right: 5rem;
+
+}
+
+
+div.parentItems {
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: fit-content;
+    padding-left: 5rem;
+}
+
+
+a.parkingItemLink {
+
+    text-decoration: none;
+    color: black;    
+}
+
+
+
+span.badge {
+
+    background-color: white;
+    color: lightseagreen;
+    width: fit-content;
+    font-size: 1rem;
+    text-align: center;
+    margin: auto;
+    border: 0.1rem solid lightseagreen;
+    border-radius: 10px;
+}
+
+
+div.itemCont:hover {
+    
+    span{
+
+        background-color: lightseagreen;
+        color: white;
+        border: 0.1rem solid lightseagreen;    
+    }
+}
+
+
+span.badge > p {
+    
+    font-size: smaller;
+    padding: 0rem;
+    margin: 1rem;
+}
