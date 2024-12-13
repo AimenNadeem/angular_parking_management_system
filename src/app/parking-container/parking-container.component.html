@@ -1,0 +1,22 @@
+<div class="parkBox">
+
+
+    <div class="tabNav">
+        <nav mat-tab-nav-bar [tabPanel]="tabPanel">
+            <a routerLink="welcome" routerLinkActive="active">Welcome</a>
+            <a *ngIf="this.adminStatus===true" routerLink="add-parking" routerLinkActive="active">Add Parking</a>
+            <a *ngIf="this.adminStatus===true" routerLink="show-parkings" routerLinkActive="active">Show Parkings</a>
+            <a *ngIf="this.adminStatus===false || this.adminStatus===true" routerLink="add-car-parking" routerLinkActive="active">Add Car Parking</a>
+            <a *ngIf="this.adminStatus===false || this.adminStatus===true" routerLink="show-cars-parked" routerLinkActive="active">Show Car Parking</a>
+            <a *ngIf="this.adminStatus===true" routerLink="show-users" routerLinkActive="active">Users</a>
+        </nav>
+        <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
+    </div>
+
+    <div class="parkingRouteContent">
+        <router-outlet></router-outlet>
+    </div>
+
+</div>
+
+
