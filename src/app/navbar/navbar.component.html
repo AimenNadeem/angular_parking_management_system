@@ -1,0 +1,10 @@
+<div class="navi" [ngStyle]="this.style">
+  <nav>
+    <a id="fma" *ngIf="this.logState()==true" routerLink="/signup">FMA</a>
+    <a id="signX" *ngIf="this.logState()==true" routerLink="/signup">SignUp</a>
+    <a id="loginX" *ngIf="this.logState()==true" routerLink="/login">Login</a>
+    
+    <a *ngIf="this.logState()==false" routerLink="/park" routerLinkActive="true" aria-current="page">Home</a>
+    <a *ngIf="this.logState()==false" routerLink="/login" routerLinkActive="true" aria-current="page" (click)="clearLoginData()">Logout</a>
+  </nav>
+</div>
